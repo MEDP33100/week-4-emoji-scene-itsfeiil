@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #87CEEB;  /* sky background */
+    font-size: 5rem;
+}
+
+.scene {
+    display: none; /* not showing emoji at first */
+    text-align: center;
+    position: relative;
+}
+
+.cloud {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 7rem;
+    animation: float 5s infinite linear;
+    position: relative;
+}
+
+.sun {
+    font-size: 8rem;
+    animation: rotateSun 10s infinite linear;
+}
+
+.butterfly {
+    font-size: 4rem;
+    position: absolute;
+    top: 20%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.butterfly-left {
+    left: -8%;
+}
+
+.butterfly-right {
+    right: -8%;
+}
+
+.rainbow {
+    font-size: 5rem;
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 6s infinite linear;
+}
+
+.button {
+    font-size: 2rem;
+    padding: 10px 20px;
+    background-color: grey; /* darker shade at first */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white; 
+    font-family: 'Courier New'; 
+    transition: background-color 0.3s ease; /* hover change */
+}
+
+.button:hover {
+    background-color: pink; /* more fancy color */
+}
+
+/* for the sun */
+@keyframes rotateSun {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* for the cloud */
+@keyframes float {
+    0% { transform: translateX(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateX(0); }
+}
